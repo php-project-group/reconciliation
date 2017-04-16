@@ -1,0 +1,53 @@
+<!--<taglib name="html" />-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="__PUBLIC__/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <style type="text/css">
+        * {padding: 10px}
+    </style>
+</head>
+<!--<body>-->
+<!--Hello,{$name}!-->
+
+<!--&lt;!&ndash;{$Think.session.user_id}&ndash;&gt;-->
+
+<!--&lt;!&ndash;{$Think.server.script_name}&ndash;&gt;-->
+
+<!--&lt;!&ndash;{$Think.get.pageNumber}&ndash;&gt;-->
+
+<!--&lt;!&ndash;{$Think.lang.page_error}&ndash;&gt;-->
+
+<!--{$path} __PUBLIC__-->
+
+<!--&lt;!&ndash;{$Think.lang._MODULE_NOT_EXIST_}&ndash;&gt;-->
+<!--&lt;!&ndash;<eq name="status" value="1" >&ndash;&gt;-->
+<!--&lt;!&ndash;正常&ndash;&gt;-->
+<!--&lt;!&ndash;</eq>&ndash;&gt;-->
+
+<!--</body>-->
+
+<body>
+<h2>Excel导出</h2>
+<div class='wst-tbar' style="height:50px">
+    <form method="post" action="{:U('Home/Index/export','','')}" enctype="multipart/form-data">
+        <button type="submit" class="btn btn-success glyphicon glyphicon-plus">导出</button>
+    </form>
+</div>
+<div class="table-responsive">
+    <table class="table table-bordered">
+        <thead>
+        <tr> <th>姓名</th><th>手机号码</th> <th>性别</th><th>email</th></tr>
+        </thead>
+        <tbody>
+        <volist name="data" key="key" id="vo">
+            <tr><td>{$vo['user_name']}</td><td>{$vo['user_phone']}</td><td>{$vo['user_sex']}</td><td>{$vo['user_email']}</td></tr>
+        </volist>
+        </tbody>
+    </table>
+</div>
+</body>
+
+</html>
