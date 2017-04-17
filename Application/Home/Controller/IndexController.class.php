@@ -21,6 +21,9 @@ class IndexController extends Controller {
         $user = D('Home/Index');
         $data = $user->queryByList();
         $this->assign('data',$data);
+
+        getXml();
+
         $this->display("/index");
     }
 
